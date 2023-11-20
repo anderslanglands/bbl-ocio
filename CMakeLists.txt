@@ -11,7 +11,7 @@ set(bindfiles
 )
 
 bbl_translate_binding(
-    opencolorio-c
+    opencolorio
     BINDFILES 
         ${bindfiles}
     COMPILE_ARGS 
