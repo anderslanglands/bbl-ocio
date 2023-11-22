@@ -22,8 +22,6 @@ bbl_translate_binding(
         -D_MT 
         -DBOOST_ALL_NO_LIB 
         -D__TBB_show_deprecation_message_task_H 
-    LANGUAGES
-        rust
 )
 
 target_link_libraries(opencolorio-c PUBLIC OpenColorIO::OpenColorIO)
