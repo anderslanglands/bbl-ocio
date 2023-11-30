@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(bbl-opencolorio VERSION 0.1 LANGUAGES C CXX)
 
-find_package(babble CONFIG REQUIRED)
+find_package(babble 0.5 CONFIG REQUIRED)
 find_package(OpenColorIO 2.2 REQUIRED)
 
 include(GNUInstallDirs)

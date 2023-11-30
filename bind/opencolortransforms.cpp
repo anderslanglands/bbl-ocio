@@ -9,7 +9,6 @@
 #include <istream>
 
 BBL_MODULE(ocio) {
-
   bbl::Class<OCIO_NAMESPACE::FormatMetadata>()
       .m(&OCIO_NAMESPACE::FormatMetadata::getElementName)
       .m(&OCIO_NAMESPACE::FormatMetadata::setElementName)
@@ -514,9 +513,7 @@ BBL_MODULE(ocio) {
 
   bbl::Class<OCIO_NAMESPACE::GradingPrimary>()
       .value_type()
-      .ctor(bbl::Ctor<OCIO_NAMESPACE::GradingPrimary,
-                      OCIO_NAMESPACE::GradingStyle>("gradingStyle"),
-            "default")
+      .ctor(bbl::Class<OCIO_NAMESPACE::GradingPrimary>::Ctor<OCIO_NAMESPACE::GradingStyle>("gradingStyle"), "default")
       .f(&OCIO_NAMESPACE::GradingPrimary::m_brightness)
       .f(&OCIO_NAMESPACE::GradingPrimary::m_contrast)
       .f(&OCIO_NAMESPACE::GradingPrimary::m_gamma)
@@ -604,7 +601,7 @@ BBL_MODULE(ocio) {
 
   bbl::Class<OCIO_NAMESPACE::GradingRGBMSW>()
       .value_type()
-      .ctor(bbl::Ctor<OCIO_NAMESPACE::GradingRGBMSW, double, double, double,
+      .ctor(bbl::Class<OCIO_NAMESPACE::GradingRGBMSW>::Ctor<double, double, double,
                       double, double, double>("red", "green", "blue", "master",
                                               "start", "width"),
             "from_coeffs")
@@ -618,7 +615,7 @@ BBL_MODULE(ocio) {
   bbl::Class<OCIO_NAMESPACE::GradingTone>()
       .value_type()
       .ctor(
-          bbl::Ctor<OCIO_NAMESPACE::GradingTone, OCIO_NAMESPACE::GradingStyle>(
+          bbl::Class<OCIO_NAMESPACE::GradingTone>::Ctor<OCIO_NAMESPACE::GradingStyle>(
               "style"),
           "default")
       .f(&OCIO_NAMESPACE::GradingTone::m_blacks)

@@ -10,6 +10,7 @@
 #include <istream>
 
 BBL_MODULE(ocio) {
+
     bbl::fn(&OCIO_NAMESPACE::ClearAllCaches);
 
     bbl::fn(&OCIO_NAMESPACE::GetVersion);
@@ -572,7 +573,7 @@ BBL_MODULE(ocio) {
     bbl::Enum<OCIO_NAMESPACE::EnvironmentMode>().prefix("");
 
     bbl::Class<OCIO_NAMESPACE::PackedImageDesc>()
-        .ctor(bbl::Ctor<OCIO_NAMESPACE::PackedImageDesc, void*, long, long, OCIO_NAMESPACE::ChannelOrdering, OCIO_NAMESPACE::BitDepth, ptrdiff_t, ptrdiff_t, ptrdiff_t>
+        .ctor(bbl::Class<OCIO_NAMESPACE::PackedImageDesc>::Ctor<void*, long, long, OCIO_NAMESPACE::ChannelOrdering, OCIO_NAMESPACE::BitDepth, ptrdiff_t, ptrdiff_t, ptrdiff_t>
                                                          ("data", "width", "height", "channelOrdering", "bitDepth", "chanStrideBytes", "xStrideBytes", "yStrideBytes"))
         .m(&OCIO_NAMESPACE::PackedImageDesc::getRData)
         .m(&OCIO_NAMESPACE::PackedImageDesc::getGData)
@@ -589,7 +590,7 @@ BBL_MODULE(ocio) {
 
 
     bbl::Class<OCIO_NAMESPACE::PlanarImageDesc>()
-        .ctor(bbl::Ctor<OCIO_NAMESPACE::PlanarImageDesc, void*, void*, void*, void*, long, long, OCIO_NAMESPACE::BitDepth, ptrdiff_t, ptrdiff_t>
+        .ctor(bbl::Class<OCIO_NAMESPACE::PlanarImageDesc>::Ctor<void*, void*, void*, void*, long, long, OCIO_NAMESPACE::BitDepth, ptrdiff_t, ptrdiff_t>
                                                          ("rData", "gData", "bData", "aData", "width", "height", "bitDepth", "xStrideBytes", "yStrideBytes"))
         .m(&OCIO_NAMESPACE::PlanarImageDesc::getRData)
         .m(&OCIO_NAMESPACE::PlanarImageDesc::getGData)
