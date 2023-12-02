@@ -451,8 +451,6 @@ BBL_MODULE(ocio) {
         ;
 
     bbl::Class<OCIO_NAMESPACE::FileRules>()
-        .m(&OCIO_NAMESPACE::FileRules::DefaultRuleName)
-        .m(&OCIO_NAMESPACE::FileRules::FilePathSearchRuleName)
         .m(&OCIO_NAMESPACE::FileRules::Create)
         .m(&OCIO_NAMESPACE::FileRules::createEditableCopy)
         .m(&OCIO_NAMESPACE::FileRules::getNumEntries)
